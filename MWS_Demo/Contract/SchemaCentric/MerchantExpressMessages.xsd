@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2008 rel. 2 (http://www.altova.com) by mazuki (darksiderg) -->
+<xs:schema xmlns:typ="urn:safetypay:schema:mws:api" xmlns="urn:safetypay:messages:mws:api" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:safetypay:messages:mws:api" elementFormDefault="qualified">
+	<xs:import namespace="urn:safetypay:schema:mws:api" schemaLocation="MerchantExpressDataTypes.xsd"/>
+	<xs:element name="ShippedOrderRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ApiKey" type="xs:string"/>
+				<xs:element name="RequestDateTime" type="xs:string"/>
+				<xs:element name="ShippingDetail" type="typ:ShippingDetailType"/>
+				<xs:element name="Signature" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ShippedOrderResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResponseDateTime" type="xs:string"/>
+				<xs:element name="Signature" type="xs:string"/>
+				<xs:element name="ErrorManager" type="typ:ErrorManagerType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RefundProcessRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ApiKey" type="xs:string"/>
+				<xs:element name="RequestDateTime" type="xs:string"/>
+				<xs:element name="SalesOperationID" type="xs:string"/>
+				<xs:element name="AmountToRefund" type="xs:decimal"/>
+				<xs:element name="TotalPartial" type="xs:integer"/>
+				<xs:element name="Reason" type="xs:integer"/>
+				<xs:element name="Comments" type="xs:string" minOccurs="0"/>
+				<xs:element name="Signature" type="xs:string"/>
+				<xs:element name="MerchantRefundId" type="xs:string" minOccurs="0"/>
+				<xs:element name="ShopperInformation" type="typ:ShopperInformationType" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="GenericRefundProcessRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ApiKey" type="xs:string"/>
+				<xs:element name="RequestDateTime" type="xs:string"/>
+				<xs:element name="SalesOperationID" type="xs:string"/>
+				<xs:element name="AmountToRefund" type="xs:decimal"/>
+				<xs:element name="CurrencyID" type="xs:string"/>
+				<xs:element name="TotalPartial" type="xs:integer"/>
+				<xs:element name="Reason" type="xs:integer"/>
+				<xs:element name="CustomerInformation" type="typ:CustomerInformationType" minOccurs="0"/>
+				<xs:element name="Comments" type="xs:string" minOccurs="0"/>
+				<xs:element name="MerchantRefundId" type="xs:string" minOccurs="0"/>
+				<xs:element name="Signature" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RefundProcessResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResponseDateTime" type="xs:string"/>
+				<xs:element name="Refund" type="typ:RefundType"/>
+				<xs:element name="Signature" type="xs:string"/>
+				<xs:element name="ErrorManager" type="typ:ErrorManagerType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OperationActivityRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ApiKey" type="xs:string"/>
+				<xs:element name="RequestDateTime" type="xs:string"/>
+				<xs:element name="Signature" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OperationRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ApiKey" type="xs:string"/>
+				<xs:element name="RequestDateTime" type="xs:string"/>
+				<xs:element name="MerchantSalesID" type="xs:string"/>
+				<xs:element name="Signature" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OperationResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResponseDateTime" type="xs:string"/>
+				<xs:element name="ListOfOperations" type="typ:ListOfOperationsType"/>
+				<xs:element name="Signature" type="xs:string"/>
+				<xs:element name="ErrorManager" type="typ:ErrorManagerType"/>
+     
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CreateTransactionRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ApiKey" type="xs:string"/>
+				<xs:element name="RequestDateTime" type="xs:string"/>
+				<xs:element name="MerchantSalesID" type="xs:string"/>
+				<xs:element name="Signature" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CreateTransactionResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResponseDateTime" type="xs:string"/>
+				<xs:element name="ListOfOperations" type="typ:ListOfOperationsType"/>
+				<xs:element name="Signature" type="xs:string"/>
+				<xs:element name="ErrorManager" type="typ:ErrorManagerType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OperationActivityNotifiedRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ApiKey" type="xs:string"/>
+				<xs:element name="RequestDateTime" type="xs:string"/>
+				<xs:element name="ListOfOperationsActivityNotified" type="typ:ListOfOperationsActivityNotifiedType"/>
+				<xs:element name="Signature" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OperationActivityNotifiedResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResponseDateTime" type="xs:string"/>
+				<xs:element name="Signature" type="xs:string"/>
+				<xs:element name="ErrorManager" type="typ:ErrorManagerType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TestRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ApiKey" type="xs:string"/>
+				<xs:element name="RequestDateTime" type="xs:string"/>
+				<xs:element name="Signature" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TestResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResponseDateTime" type="xs:string"/>
+				<xs:element name="Signature" type="xs:string"/>
+				<xs:element name="ErrorManager" type="typ:ErrorManagerType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExpressTokenRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ApiKey" type="xs:string"/>
+				<xs:element name="RequestDateTime" type="xs:string"/>
+				<xs:element name="CurrencyID" type="xs:string"/>
+				<xs:element name="Amount" type="xs:decimal"/>
+				<xs:element name="MerchantSalesID" type="xs:string"/>
+				<xs:element ref="typ:Language" minOccurs="0"/>
+				<xs:element name="TrackingCode" type="xs:string" minOccurs="0"/>
+				<xs:element name="ExpirationTime" type="xs:integer" minOccurs="0"/>
+				<xs:element name="FilterBy" type="xs:string" minOccurs="0"/>
+				<xs:element name="TransactionOkURL" type="xs:string"/>
+				<xs:element name="TransactionErrorURL" type="xs:string"/>
+				<xs:element name="TransactionExpirationTime" type="xs:integer"/>
+				<xs:element name="CustomMerchantName" type="xs:string"/>
+				<xs:element name="ShopperEmail" type="xs:string" minOccurs="0"/>
+				<xs:element name="LocalizedCurrencyID" type="xs:string"/>
+				<xs:element name="ProductID" type="xs:integer"/>
+        <xs:element name="ShopperInformation" type="ShopperInformationType" minOccurs="0"/>
+				<xs:element name="Signature" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExpressTokenResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResponseDateTime" type="xs:string"/>
+				<xs:element name="ShopperRedirectURL" type="xs:string"/>
+				<xs:element name="Signature" type="xs:string"/>
+				<xs:element name="ErrorManager" type="typ:ErrorManagerType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExpressTokenReverseRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ApiKey" type="xs:string"/>
+				<xs:element name="RequestDateTime" type="xs:string"/>
+				<xs:element name="CurrencyID" type="xs:string"/>
+				<xs:element name="Amount" type="xs:decimal"/>
+				<xs:element name="MerchantSalesID" type="xs:string"/>
+				<xs:element name="SalesCurrencyID" type="xs:string"/>
+				<xs:element ref="typ:Language" minOccurs="0"/>
+				<xs:element name="TrackingCode" type="xs:string" minOccurs="0"/>
+				<xs:element name="ExpirationTime" type="xs:integer" minOccurs="0"/>
+				<xs:element name="FilterBy" type="xs:string" minOccurs="0"/>
+				<xs:element name="TransactionOkURL" type="xs:string"/>
+				<xs:element name="TransactionErrorURL" type="xs:string"/>
+				<xs:element name="TransactionExpirationTime" type="xs:integer"/>
+				<xs:element name="CustomMerchantName" type="xs:string"/>
+				<xs:element name="ShopperEmail" type="xs:string" minOccurs="0"/>
+				<xs:element name="ProductID" type="xs:integer"/>
+        <xs:element name="ShopperInformation" type="ShopperInformationType" minOccurs="0"/>
+				<xs:element name="Signature" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExpressTokenReverseResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResponseDateTime" type="xs:string"/>
+				<xs:element name="ShopperRedirectURL" type="xs:string"/>
+				<xs:element name="Signature" type="xs:string"/>
+				<xs:element name="ErrorManager" type="typ:ErrorManagerType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CustomTransactionRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ApiKey" type="xs:string"/>
+				<xs:element name="RequestDateTime" type="xs:string"/>
+				<xs:element name="TransactionIdentifier" type="xs:string"/>
+				<xs:element name="CountryID" type="xs:string"/>
+				<xs:element name="CurrencyID" type="xs:string"/>
+				<xs:element name="Amount" type="xs:decimal"/>
+				<xs:element name="ShopperCurrencies" type="typ:ListOfShopperCurrenciesType"/>
+				<xs:element name="MerchantSalesID" type="xs:string"/>
+				<xs:element ref="typ:Language" minOccurs="0"/>
+				<xs:element name="TrackingCode" type="xs:string" minOccurs="0"/>
+				<xs:element name="ExpirationTime" type="xs:integer" minOccurs="0"/>
+				<xs:element name="CustomMerchantName" type="xs:string" minOccurs="0"/>
+				<xs:element name="TransactionOkURL" type="xs:string" minOccurs="0"/>
+				<xs:element name="TransactionErrorURL" type="xs:string" minOccurs="0"/>
+				<xs:element name="ShopperEmail" type="xs:string" minOccurs="0"/>
+				<xs:element name="Signature" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="CustomTransactionResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResponseDateTime" type="xs:string"/>
+				<xs:element name="TransactionInfo" type="typ:TransactionInfoType"/>
+				<xs:element name="Signature" type="xs:string"/>
+				<xs:element name="ErrorManager" type="typ:ErrorManagerType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TransactionSpecIdentifierRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ApiKey" type="xs:string"/>
+				<xs:element name="RequestDateTime" type="xs:string"/>
+				<xs:element name="ListOfIdentifiersSearch" type="typ:ListOfIdentifiersSearchType"/>
+				<xs:element name="Signature" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TransactionSpecIdentifierResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ResponseDateTime" type="xs:string"/>
+				<xs:element name="ListOfTransactionsProcessedStatus" type="typ:ListOfTransactionsProcessedStatusType"/>
+				<xs:element name="Signature" type="xs:string"/>
+				<xs:element name="ErrorManager" type="typ:ErrorManagerType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+  <xs:complexType name="ShopperInformationType">
+    <xs:sequence>
+      <xs:element name="ShopperFieldType" type="typ:ShopperFieldType" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

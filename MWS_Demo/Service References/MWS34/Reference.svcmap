@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e55ed43a-6f4a-42af-8ae4-7edca6b42ab4" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="D:\App\MWS_Demo\MWS_Demo\Contract_Modificado_2017_11_09\MerchantExpressWs.wsdl" Protocol="file" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MerchantExpressWs.wsdl" MetadataType="Wsdl" ID="304d98ee-079b-4bbf-9c85-e87152a34d55" SourceId="1" SourceUrl="file:///D:/App/MWS_Demo/MWS_Demo/Contract_Modificado_2017_11_09/MerchantExpressWs.wsdl" />
+    <MetadataFile FileName="MerchantExpressDataTypes.xsd" MetadataType="Schema" ID="416cb45f-9231-4c25-9105-0c248ed26f5e" SourceId="1" SourceUrl="file:///D:/App/MWS_Demo/MWS_Demo/Contract_Modificado_2017_11_09/SchemaCentric/MerchantExpressDataTypes.xsd" />
+    <MetadataFile FileName="MerchantExpressMessages.xsd" MetadataType="Schema" ID="b1e7811c-4696-4bc0-b8da-a52ce3b0fe3a" SourceId="1" SourceUrl="file:///D:/App/MWS_Demo/MWS_Demo/Contract_Modificado_2017_11_09/SchemaCentric/MerchantExpressMessages.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

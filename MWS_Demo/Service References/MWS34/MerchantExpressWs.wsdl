@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="urn:safetypay:contract:mws:api" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:typ="urn:safetypay:schema:mws:api" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:msg="urn:safetypay:messages:mws:api" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" targetNamespace="urn:safetypay:contract:mws:api" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="urn:safetypay:contract:mws:api">
+      <xs:import schemaLocation=".\SchemaCentric\MerchantExpressMessages.xsd" namespace="urn:safetypay:messages:mws:api" />
+      <xs:import schemaLocation=".\SchemaCentric\MerchantExpressDataTypes.xsd" namespace="urn:safetypay:schema:mws:api" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="MsgCommunicationTestRequest">
+    <wsdl:part name="Request" element="msg:TestRequest" />
+  </wsdl:message>
+  <wsdl:message name="MsgCommunicationTestResponse">
+    <wsdl:part name="Response" element="msg:TestResponse" />
+  </wsdl:message>
+  <wsdl:message name="MsgConfirmShippedOrdersRequest">
+    <wsdl:part name="Request" element="msg:ShippedOrderRequest" />
+  </wsdl:message>
+  <wsdl:message name="MsgConfirmShippedOrdersResponse">
+    <wsdl:part name="Response" element="msg:ShippedOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="MsgCreateExpressTokenRequest">
+    <wsdl:part name="Request" element="msg:ExpressTokenRequest" />
+  </wsdl:message>
+  <wsdl:message name="MsgCreateExpressTokenResponse">
+    <wsdl:part name="Response" element="msg:ExpressTokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="MsgCreateExpressTokenReverseRequest">
+    <wsdl:part name="Request" element="msg:ExpressTokenReverseRequest" />
+  </wsdl:message>
+  <wsdl:message name="MsgCreateExpressTokenReverseResponse">
+    <wsdl:part name="Response" element="msg:ExpressTokenReverseResponse" />
+  </wsdl:message>
+  <wsdl:message name="MsgCreateRefundRequest">
+    <wsdl:part name="Request" element="msg:RefundProcessRequest" />
+  </wsdl:message>
+  <wsdl:message name="MsgCreateRefundResponse">
+    <wsdl:part name="Response" element="msg:RefundProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="MsgCreateGenericRefundRequest">
+    <wsdl:part name="Request" element="msg:GenericRefundProcessRequest" />
+  </wsdl:message>
+  <wsdl:message name="MsgCreateGenericRefundResponse">
+    <wsdl:part name="Response" element="msg:RefundProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="MsgGetNewOperationActivityRequest">
+    <wsdl:part name="Request" element="msg:OperationActivityRequest" />
+  </wsdl:message>
+  <wsdl:message name="MsgGetNewOperationActivityResponse">
+    <wsdl:part name="Response" element="msg:OperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="MsgConfirmNewOperationActivityRequest">
+    <wsdl:part name="Request" element="msg:OperationActivityNotifiedRequest" />
+  </wsdl:message>
+  <wsdl:message name="MsgConfirmNewOperationActivityResponse">
+    <wsdl:part name="Response" element="msg:OperationActivityNotifiedResponse" />
+  </wsdl:message>
+  <wsdl:message name="MsgGetOperationRequest">
+    <wsdl:part name="Request" element="msg:OperationRequest" />
+  </wsdl:message>
+  <wsdl:message name="MsgGetOperationResponse">
+    <wsdl:part name="Response" element="msg:OperationResponse" />
+  </wsdl:message>
+  <wsdl:message name="MsgCreateCustomTransactionRequest">
+    <wsdl:part name="Request" element="msg:CustomTransactionRequest" />
+  </wsdl:message>
+  <wsdl:message name="MsgCreateCustomTransactionResponse">
+    <wsdl:part name="Response" element="msg:CustomTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="MsgVoidTransactionRequest">
+    <wsdl:part name="Request" element="msg:TransactionSpecIdentifierRequest" />
+  </wsdl:message>
+  <wsdl:message name="MsgVoidTransactionResponse">
+    <wsdl:part name="Response" element="msg:TransactionSpecIdentifierResponse" />
+  </wsdl:message>
+  <wsdl:portType name="MerchantExpressApiOperations">
+    <wsdl:operation name="CommunicationTest">
+      <wsdl:input message="tns:MsgCommunicationTestRequest" />
+      <wsdl:output message="tns:MsgCommunicationTestResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmShippedOrders">
+      <wsdl:input message="tns:MsgConfirmShippedOrdersRequest" />
+      <wsdl:output message="tns:MsgConfirmShippedOrdersResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateExpressToken">
+      <wsdl:input message="tns:MsgCreateExpressTokenRequest" />
+      <wsdl:output message="tns:MsgCreateExpressTokenResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateExpressTokenReverse">
+      <wsdl:input message="tns:MsgCreateExpressTokenReverseRequest" />
+      <wsdl:output message="tns:MsgCreateExpressTokenReverseResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRefund">
+      <wsdl:input message="tns:MsgCreateRefundRequest" />
+      <wsdl:output message="tns:MsgCreateRefundResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateGenericRefund">
+      <wsdl:input message="tns:MsgCreateGenericRefundRequest" />
+      <wsdl:output message="tns:MsgCreateGenericRefundResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewOperationActivity">
+      <wsdl:input message="tns:MsgGetNewOperationActivityRequest" />
+      <wsdl:output message="tns:MsgGetNewOperationActivityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmNewOperationActivity">
+      <wsdl:input message="tns:MsgConfirmNewOperationActivityRequest" />
+      <wsdl:output message="tns:MsgConfirmNewOperationActivityResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOperation">
+      <wsdl:input message="tns:MsgGetOperationRequest" />
+      <wsdl:output message="tns:MsgGetOperationResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomTransaction">
+      <wsdl:input message="tns:MsgCreateCustomTransactionRequest" />
+      <wsdl:output message="tns:MsgCreateCustomTransactionResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="VoidTransaction">
+      <wsdl:input message="tns:MsgVoidTransactionRequest" />
+      <wsdl:output message="tns:MsgVoidTransactionResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MerchantExpressApiBinding" type="tns:MerchantExpressApiOperations">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CommunicationTest">
+      <soap:operation soapAction="urn:safetypay:contract:mws:api:CommunicationTest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmShippedOrders">
+      <soap:operation soapAction="urn:safetypay:contract:mws:api:ConfirmShippedOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateExpressToken">
+      <soap:operation soapAction="urn:safetypay:contract:mws:api:CreateExpressToken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateExpressTokenReverse">
+      <soap:operation soapAction="urn:safetypay:contract:mws:api:CreateExpressTokenReverse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRefund">
+      <soap:operation soapAction="urn:safetypay:contract:mws:api:CreateRefund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGenericRefund">
+      <soap:operation soapAction="urn:safetypay:contract:mws:api:CreateGenericRefund" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNewOperationActivity">
+      <soap:operation soapAction="urn:safetypay:contract:mws:api:GetNewOperationActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmNewOperationActivity">
+      <soap:operation soapAction="urn:safetypay:contract:mws:api:ConfirmNewOperationActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOperation">
+      <soap:operation soapAction="urn:safetypay:contract:mws:api:GetOperation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomTransaction">
+      <soap:operation soapAction="urn:safetypay:contract:mws:api:CreateCustomTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="VoidTransaction">
+      <soap:operation soapAction="urn:safetypay:contract:mws:api:VoidTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SafetypayInterfaceService">
+    <wsdl:port name="MerchantExpressApiPort" binding="tns:MerchantExpressApiBinding">
+      <soap:address location="https://sandbox-mws2.safetypay.com/express/ws/v.3.0/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
